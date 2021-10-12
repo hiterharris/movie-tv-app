@@ -1,32 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './App.css';
-import axios from 'axios'
+import { Home, Header, MovieList } from './components';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 const App = () => {
-  const [movies, setMovies] = useState([])
-
-  useEffect(() => {
-    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=727ef961992c940d049df733d71e6951&language=en-US&page=1')
-    .then(res => {
-      const data = res.data.results
-      setMovies(data)
-    })
-  }, [0])
-
   return (
     <div className="App">
-      {movies.map((movie) => {
-        return (
-          <div className='movie'>
-              <h3>{movie.title}</h3>
-              <img 
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt="poster"
-                className='poster'
-              />
-          </div>
-        )
-      })}
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/movies">
+            <MovieList />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
