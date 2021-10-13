@@ -1,0 +1,17 @@
+.Favorites {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    margin: 2%;
+}
+
+.poster {
+    width: 20%;
+}
+
+.favorite-type {
+    width: 50%;
+}

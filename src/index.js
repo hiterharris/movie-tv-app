@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { moviesReducer } from './store';
+import rootReducer from './store';
 
-const store = createStore(moviesReducer)
+const store = createStore(rootReducer)
 
 ReactDOM.render(
   <React.StrictMode>

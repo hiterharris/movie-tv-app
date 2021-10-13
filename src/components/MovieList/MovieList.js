@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux';
-import './MovieList.css';
+import './MovieList.css'
 import axios from 'axios'
+import { addMovie } from '../../store/movieFavorites/actions'
+import { useDispatch } from 'react-redux'
 
 const MovieList = () => {
   const [movies, setMovies] = useState([])
-  const movies2 = useSelector(state => state.movies)
-  console.log(movies2)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     axios.get('https://api.themoviedb.org/3/movie/popular?api_key=727ef961992c940d049df733d71e6951&language=en-US&page=1')
@@ -18,15 +18,18 @@ const MovieList = () => {
 
   return (
     <div className="Movies">
-      {movies.map((movie, index) => {
+      {movies.map((item, index) => {
         return (
-          <div className='movie' key={index}>
-              <h3>{movie.title}</h3>
+          <div className='container' key={index}>
+            <div>
+              <h3>{item.title}</h3>
               <img 
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt="poster"
                 className='poster'
               />
+            </div>
+            <button onClick={() => dispatch(addMovie(item))}>Add to Favorites</button>
           </div>
         )
       })}
