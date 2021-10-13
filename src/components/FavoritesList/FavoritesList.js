@@ -34,7 +34,7 @@ const FavoritesList = () => {
         return (
           <div className='container' key={index}>
             <div>
-              <h3>{item.title}</h3>
+              <h3>{item.name}</h3>
               <img 
                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt="poster"
