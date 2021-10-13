@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { Home, Header, MovieList } from './components';
+import { Home, Header, MovieList, ShowsList } from './components';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +13,9 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
+          <Route path="/shows">
+            <ShowsList />
+          </Route>
           <Route path="/movies">
             <MovieList />
           </Route>

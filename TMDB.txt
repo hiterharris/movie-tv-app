@@ -1,0 +1,7 @@
+Site: https://developers.themoviedb.org/3/getting-started/introduction
+
+API Key: 727ef961992c940d049df733d71e6951
+
+Example: https://api.themoviedb.org/3/movie/popular?api_key=727ef961992c940d049df733d71e6951&language=en-US&page=1
+
+Images: https://image.tmdb.org/t/p/w500/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg
