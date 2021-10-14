@@ -1,9 +1,9 @@
-import './ShowsList.css';
+import './ShowList.css';
 import { addShow } from '../../store/showFavorites/actions'
 import { useDispatch } from 'react-redux'
 import useData from '../../hooks/useData'
 
-const ShowsList = () => {
+const ShowList = () => {
   const shows = useData('shows')
   const dispatch = useDispatch()
 
@@ -29,4 +29,4 @@ const ShowsList = () => {
   );
 }
 
-export default ShowsList;
+export default ShowList;

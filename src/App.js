@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { Home, Header, MovieList, ShowsList, FavoritesList } from './components';
+import { Home, Header, MovieList, ShowList, FavoritesList } from './components';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +17,7 @@ const App = () => {
             <FavoritesList />
           </Route>
           <Route path="/shows">
-            <ShowsList />
+            <ShowList />
           </Route>
           <Route path="/movies">
             <MovieList />
