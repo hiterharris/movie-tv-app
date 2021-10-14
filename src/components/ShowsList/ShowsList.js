@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from 'react'
 import './ShowsList.css';
-import axios from 'axios'
 import { addShow } from '../../store/showFavorites/actions'
 import { useDispatch } from 'react-redux'
+import useData from '../../hooks/useData'
 
 const ShowsList = () => {
-  const [shows, setShows] = useState([])
+  const shows = useData('shows')
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    axios.get('https://api.themoviedb.org/3/tv/popular?api_key=727ef961992c940d049df733d71e6951&language=en-US&page=1')
-    .then(res => {
-      const data = res.data.results
-      setShows(data)
-    })
-  }, [0])
 
   return (
     <div className="TV">
-      {shows.map((item, index) => {
+      {shows?.results?.map((item, index) => {
         return (
           <div className='container' key={index}>
             <div>

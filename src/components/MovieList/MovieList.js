@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from 'react'
 import './MovieList.css'
-import axios from 'axios'
 import { addMovie } from '../../store/movieFavorites/actions'
 import { useDispatch } from 'react-redux'
+import useData from '../../hooks/useData'
 
 const MovieList = () => {
-  const [movies, setMovies] = useState([])
+  const movies = useData('movies')
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=727ef961992c940d049df733d71e6951&language=en-US&page=1')
-    .then(res => {
-      const data = res.data.results
-      setMovies(data)
-    })
-  }, [0])
 
   return (
     <div className="Movies">
-      {movies.map((item, index) => {
+      {movies?.results?.map((item, index) => {
         return (
           <div className='container' key={index}>
             <div>
