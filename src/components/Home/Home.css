@@ -1,4 +1,12 @@
 .Home {
-    width: 60%;
+    width: 80%;
     margin: auto;
+}
+
+h2 {
+    text-align: left;
+}
+
+.list {
+    margin-bottom: 5%;
 }

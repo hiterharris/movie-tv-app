@@ -11,16 +11,16 @@ const FavoritesList = () => {
   return (
     <div className="Favorites">
       <div className='favorite-type'>
-        <h3>Movies</h3>
+        <p className='list-title'>Movies</p>
         {movieFavorites?.map((item, index) => {
         return (
-          <div className='container' key={index}>
+          <div className='favorites-container' key={index}>
             <div>
               <h3>{item.title}</h3>
               <img 
                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt="poster"
-                className='poster'
+                className='favorites-poster'
               />
             </div>
             <button onClick={() => dispatch(removeMovie(item))}>Remove</button>
@@ -29,16 +29,16 @@ const FavoritesList = () => {
       })}
       </div>
       <div className='favorite-type'>
-        <h3>Shows</h3>
+        <p className='list-title'>Shows</p>
         {showFavorites?.map((item, index) => {
         return (
-          <div className='container' key={index}>
+          <div className='favorites-container' key={index}>
             <div>
               <h3>{item.name}</h3>
               <img 
                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt="poster"
-                className='poster'
+                className='favorites-poster'
               />
             </div>
             <button onClick={() => dispatch(removeShow(item))}>Remove</button>

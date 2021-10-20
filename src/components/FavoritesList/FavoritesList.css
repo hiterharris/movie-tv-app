@@ -4,14 +4,19 @@
     width: 100%;
 }
 
-.container {
-    margin: 2%;
+.favorites-container {
+    margin: 2% auto;
+    width: 30%;
 }
 
-.poster {
-    width: 20%;
+.favorites-poster {
+    width: 80%;
 }
 
 .favorite-type {
     width: 50%;
+}
+
+.list-title {
+    font-size: 32px;;
 }
